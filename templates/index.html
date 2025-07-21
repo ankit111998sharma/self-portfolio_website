@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ankit Sharma | Web Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ankit Sharma</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger-menu" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Ankit Sharma</span></h1>
+                <p class="tagline">Aspiring Web Developer | Tech Enthusiast | UI/UX Designer</p>
+                <a href="#projects" class="btn primary-btn">View My Work <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <section id="about" class="section about-section reveal">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p class="section-subtitle">Get to know the person behind the code.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='images/ankit_pic.jpg') }}" alt="Ankit Sharma Profile Image" />
+                </div>
+                <div class="about-text">
+                    <p>
+                        I'm a passionate and self-driven aspiring web developer dedicated to crafting engaging and functional digital experiences. My expertise lies in <span class="highlight-text">HTML, CSS, and Java, Python</span>, where I love bringing ideas to life through clean and efficient code.
+                    </p>
+                    <p>
+                        Beyond coding, I have a keen eye for <span class="highlight-text">UI/UX design</span>, constantly striving to create intuitive and aesthetically pleasing interfaces. I thrive on problem-solving, enjoy exploring the latest web technologies, and am committed to continuous learning to refine my skills and stay ahead in the dynamic world of web development.
+                    </p>
+                    <a href="#contact" class="btn secondary-btn">Let's Connect <i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section reveal">
+            <div class="section-header">
+                <h2>My Projects</h2>
+                <p class="section-subtitle">A showcase of my recent work.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="{{ url_for('static', filename='images/personal_portfolio_project.png') }}" alt="Personal Portfolio Project" />
+                    <div class="project-info">
+                        <h3>Personal Portfolio</h3>
+                        <p>A responsive and modern portfolio website, designed to showcase my skills, projects, and passion for web development. Built with HTML, CSS, and JavaScript.</p>
+                        <a href="#" target="_blank" class="project-link">View Project <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="{{ url_for('static', filename='images/to_do_list_app.png') }}" alt="To-Do App Project" />
+                    <div class="project-info">
+                        <h3>Interactive To-Do App</h3>
+                        <p>A sleek and user-friendly to-do list application, featuring task management, filtering, and local storage integration for persistent data. Developed with HTML, CSS, and vanilla JavaScript.</p>
+                        <a href="#" target="_blank" class="project-link">View Project <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="{{ url_for('static', filename='images/web_quiz_app.png') }}" alt="Quiz Web App Project" />
+                    <div class="project-info">
+                        <h3>Dynamic Quiz Application</h3>
+                        <p>An engaging web-based quiz application with multiple categories, a timer, score tracking, and instant feedback. Designed to be intuitive and fun for users. Built using HTML, CSS, and JavaScript.</p>
+                        <a href="#" target="_blank" class="project-link">View Project <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section reveal">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p class="section-subtitle">Have a project in mind or just want to chat? Drop me a line!</p>
+            </div>
+            <form class="contact-form" method="POST" action="/contact_submit">
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
+                <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit" class="btn primary-btn send-message-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ankit Sharma | Designed with <i class="fas fa-heart"></i> and Code</p>
+        <div class="social-links">
+            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
